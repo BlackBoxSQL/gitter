@@ -48,6 +48,12 @@ var app = (function () {
     function empty() {
         return text('');
     }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
     function children(element) {
         return Array.from(element.childNodes);
     }
@@ -290,6 +296,7 @@ var app = (function () {
     			t2 = space();
     			p = element("p");
     			t3 = text(t3_value);
+    			attr(h3, "class", "svelte-1djf7qx");
     		},
     		m(target, anchor) {
     			insert(target, h3, anchor);
@@ -375,7 +382,7 @@ var app = (function () {
     	let users = [];
 
     	onMount(async () => {
-    		const res = await fetch("https://jsonplaceholder.typicode.com/pos");
+    		const res = await fetch("https://jsonplaceholder.typicode.com/posts");
     		const json = await res.json();
     		$$invalidate(0, users = json);
     	});
