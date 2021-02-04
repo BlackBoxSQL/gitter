@@ -13,3 +13,9 @@
     <br />
     <p>{user.body}</p>
 {/each}
+
+<style>
+    h3 {
+        color: red;
+    }
+</style>
