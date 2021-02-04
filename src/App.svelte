@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     let users = [];
     onMount(async () => {
-        const res = await fetch("https://jsonplaceholder.typicode.com/pos");
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
         const json = await res.json();
         users = json;
     });
@@ -16,6 +16,6 @@
 
 <style>
     h3 {
-        color: red;
+        color: cornflowerblue;
     }
 </style>
