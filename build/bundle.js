@@ -375,7 +375,7 @@ var app = (function () {
     	let users = [];
 
     	onMount(async () => {
-    		const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    		const res = await fetch("https://jsonplaceholder.typicode.com/pos");
     		const json = await res.json();
     		$$invalidate(0, users = json);
     	});
